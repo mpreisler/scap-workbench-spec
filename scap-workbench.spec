@@ -10,6 +10,10 @@ Source0:	https://fedorahosted.org/released/scap-workbench/%{name}-%{version}.tar
 # --progress was added in 0.9.5
 BuildRequires:	openscap-devel >= 0.9.5
 Requires:		openscap-utils >= 0.9.5	
+# ssh to scan remote machines
+Requires:		openssh-clients
+# because of 'setsid' which we use to force ssh to use GUI askpass
+Requires:		util-linux
 
 %description
 scap-workbench is GUI tool that provides scanning, tailoring, 
